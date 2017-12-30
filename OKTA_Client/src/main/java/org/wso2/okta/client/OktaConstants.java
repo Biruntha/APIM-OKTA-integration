@@ -39,7 +39,7 @@ public class OktaConstants {
 
     public static final String CLIENT_REGISTRATION_ENDPOINT = "RegistrationEndpoint";
     public static final String CLIENT_REVOKE_ENDPOINT = "RevokeEndpoint";
-    public static final String REGISTRAION_API_KEY = "AccessToken";
+    public static final String REGISTRAION_API_KEY = "apiKey";
     public static final String CLIENT_REDIRECT_URIS = "redirect_uris";
     public static final String CLIENT_GRANT_TYPES = "grant_types";
     public static final String CLIENT_NAME = "client_name";
@@ -54,7 +54,6 @@ public class OktaConstants {
     public static final String CLIENT_POST_LOGOUT_REDIRECT_URIS = "post_logout_redirect_uris";
     public static final String CLIENT_ID_ISSUED_AT = "client_id_issued_at";
     public static final String CLIENT_SECRET_EXPIRES_AT = "client_secret_expires_at";
-    public static final String INTROSPECTION_ENDPOINT = "introspectionEndpoint";
     public static final String TOKEN = "token";
     public static final String TOKEN_TYPE_HINT = "token_type_hint";
     public static final String ACCESS_TOKEN = "access_token";
@@ -69,5 +68,10 @@ public class OktaConstants {
     public static final String ACCESS_TOKEN_USER_ID = "uid";
     public static final String ACCESS_TOKEN_IDENTIFIER = "jti";
     public static final String ACCESS_TOKEN_EXPIRES_IN = "expires_in";
-
+    public static final String OKTA_INSTANCE_URL = "oktaInstanceUrl";
+    public static final String OKTA_AUTHORIZATION_SERVER_ID = "authorizationServerId";
+    public static final String USER_NAME = "username";
+    public static final String PASSWORD = "password";
+    public static final String TOKEN_SCOPE = "tokenScope";
+    public static final String TOKEN_GRANT_TYPE = "tokenGrantType";
 }

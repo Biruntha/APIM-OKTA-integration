@@ -16,45 +16,6 @@
 %>
 
 <script id="keys-template" type="text/x-handlebars-template">
-	{{#*inline "callback_url" }}
-	  <div class="form-group">
-	    <label class="" for="ConsumerKey"><%=i18n.localize("Callback URL")%> <span class="requiredAstrix">*</span></label>
-        	<input type="text" class="form-control callback_url" title="" placeholder="" value="{{callbackUrl}}">	      
-	  </div>
-	{{/inline}}
-
-{{#*inline "application_type" }}
-	  <div class="form-group">
-		<label class="" for="ConsumerKey">Application Type <span class="requiredAstrix">*</span></label>
-		<input type="text" class="form-control application_type" id="application_type" title="application_type" placeholder="" value="{{application_type}}">	      
-	  </div>
-{{/inline}}
-{{#*inline "response_types" }}
-	  <div class="form-group">
-	<label class="" for="ConsumerKey">Response Types <span class="requiredAstrix">*</span></label>
-	<input type="text" class="form-control response_types" title="response_types" placeholder="" value="{{response_types}}">	      
-</div>
-{{/inline}}
-{{#*inline "token_endpoint_auth_method" }}
-	  <div class="form-group">
-	<label class="" for="ConsumerKey">Token Endpoint Auth Method <span class="requiredAstrix">*</span></label>
-	<input type="text" class="form-control token_endpoint_auth_method" title="token_endpoint_auth_method" placeholder="" value="{{token_endpoint_auth_method}}">	      
-</div>
-{{/inline}}
-{{#*inline "scope" }}
-	  <div class="form-group">
-	<label class="" for="ConsumerKey">Token Scope <span class="requiredAstrix">*</span></label>
-	<input type="text" class="form-control scope" title="scope" placeholder="" value="{{scope}}">	      
-</div>
-{{/inline}}
-{{#*inline "tokenGrantType" }}
-	  <div class="form-group">
-		<label class="" for="ConsumerKey">Token Grant Type <span class="requiredAstrix">*</span></label>
-		<input type="text" class="form-control tokenGrantType" title="tokenGrantType" placeholder="" value="{{tokenGrantType}}">	      
-	  </div>
-{{/inline}}
-
-
 
 	{{#*inline "grants" }}
 		<div class="row add-margin-top-5x">
@@ -103,16 +64,29 @@
 		      </div>
 		    </div>
 		  </div>
+{{> grants this}}
+<form class="add-margin-top-5x well">
+		  
+	<div class="form-group">
+		<label class="" for="ConsumerKey"><%=i18n.localize("Callback URL")%> <span class="requiredAstrix">*</span></label>
+		<input type="text" required class="form-control" title="callback-url">	      
+	</div>
+	<div class="form-group">
+		<label class="" for="ConsumerKey">Application Type <span class="requiredAstrix">*</span></label>
+		<input type="text" required class="form-control" id="application_type" title="application_type">	      
+	</div>
+	<div class="form-group">
+		<label class="" for="ConsumerKey">Response Types <span class="requiredAstrix">*</span></label>
+		<input type="text" required class="form-control" title="response_types">	      
+	</div>
+	<div class="form-group">
+		<label class="" for="ConsumerKey">Token Endpoint Auth Method <span class="requiredAstrix">*</span></label>
+		<input type="text" required class="form-control" title="token_endpoint_auth_method">	      
+	</div>
 
-		  {{> grants this}}
-		  {{> callback_url this}}
-{{> application_type this}}
-{{> response_types this}}
-{{> token_endpoint_auth_method this}}
 
-
-		  <button class=" btn btn-primary update_grants"><%=i18n.localize("Update")%></button>
-
+	<button class=" btn btn-primary update_grants"><%=i18n.localize("Update")%></button>
+</form>
 
 		<div class="row add-margin-top-5x">
 		  <div class="col-md-12">
@@ -205,13 +179,35 @@
 		<div class="row">
 		  <div class="col-md-12 col-lg-9">
 		  	  {{> grants this}}
-		  	  {{> callback_url this}}
-{{> application_type this}}
-{{> response_types this}}
-{{> token_endpoint_auth_method this}}
-{{> scope this}}
-{{> tokenGrantType this}}
-			  <form class="add-margin-top-5x well">
+
+	 <form class="add-margin-top-5x well">
+
+		<div class="form-group">
+			<label class="" for="ConsumerKey"><%=i18n.localize("Callback URL")%> <span class="requiredAstrix">*</span></label>
+			<input type="text" required class="form-control" title="callback-url">	      
+		</div>
+		<div class="form-group">
+			<label class="" for="ConsumerKey">Application Type <span class="requiredAstrix">*</span></label>
+			<input type="text" required class="form-control" id="application_type" title="application_type">	      
+		</div>
+		<div class="form-group">
+			<label class="" for="ConsumerKey">Response Types <span class="requiredAstrix">*</span></label>
+			<input type="text" required class="form-control" title="response_types">	      
+		</div>
+		<div class="form-group">
+			<label class="" for="ConsumerKey">Token Endpoint Auth Method <span class="requiredAstrix">*</span></label>
+			<input type="text" required class="form-control" title="token_endpoint_auth_method">	      
+		</div>
+		 <div class="form-group">
+			<label class="" for="ConsumerKey">Token Scope <span class="requiredAstrix">*</span></label>
+			<input type="text" required class="form-control" title="scope">	      
+		</div>
+		<div class="form-group">
+			<label class="" for="ConsumerKey">Token Grant Type <span class="requiredAstrix">*</span></label>
+			<input type="text" required class="form-control" title="tokenGrantType">	      
+		</div>
+
+
                 <div style="display: none; class="form-group">
                     <label for="" class="control-label"><%=i18n.localize("Scopes")%></label>
                       <select id="scopes" class="selectpicker scope_select dropup form-control"  multiple title="{{#if Scopes}}Select..{{else}}No Scopes Found..{{/if}}" {{#if Scopes}}{{else}}disabled{{/if}}>
@@ -229,12 +225,8 @@
                 </div>
 
 
-
-
-
-
-			    <button class="btn btn-primary generatekeys" data-load-text="<%= i18n.localize("Generating") %>"><%=i18n.localize("Generate keys")%></button>
-              </form>
+		<button class="btn btn-primary generatekeys" data-load-text="<%= i18n.localize("Generating") %>"><%=i18n.localize("Generate keys")%></button>
+           </form>
 		  </div>
 	    </div>
 	  {{/unless}}
